@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>hello</title>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 116) {  // 116 is the key code for F5
+                location.reload();  // reload the page
+            }
+        });
+    </script>
+    <script type="module" src="index.js"></script>
 </head>
 <body>
-hello
+hello world
+<iframe id="assetFrame"></iframe>
 </body>
 </html>

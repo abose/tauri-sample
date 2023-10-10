@@ -4,7 +4,8 @@
     "beforeBuildCommand": "",
     "beforeDevCommand": "npm run serve",
     "devPath": "http://localhost:7000/src-html",
-    "distDir": "../src-html"
+    "distDir": "../src-html",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "taurisimple",
@@ -12,10 +13,78 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "all": true,
+      "fs": {
+        "all": true,
+        "scope": [
+          "$APPCONFIG/**",
+          "$APPDATA/**",
+          "$APPLOCALDATA/**",
+          "$APPCACHE/**",
+          "$APPLOG/**",
+          "$AUDIO/**",
+          "$CACHE/**",
+          "$CONFIG/**",
+          "$DATA/**",
+          "$LOCALDATA/**",
+          "$DESKTOP/**",
+          "$DOCUMENT/**",
+          "$DOWNLOAD/**",
+          "$EXE/**",
+          "$FONT/**",
+          "$HOME/**",
+          "$PICTURE/**",
+          "$PUBLIC/**",
+          "$RUNTIME/**",
+          "$TEMPLATE/**",
+          "$VIDEO/**",
+          "$RESOURCE/**",
+          "$APP/**",
+          "$LOG/**",
+          "$TEMP/**",
+          "**",
+          "**/**",
+          "$APPCONFIG/**/*.*",
+          "$APPDATA/**/*.*",
+          "$APPLOCALDATA/**/*.*",
+          "$APPCACHE/**/*.*",
+          "$APPLOG/**/*.*",
+          "$AUDIO/**/*.*",
+          "$CACHE/**/*.*",
+          "$CONFIG/**/*.*",
+          "$DATA/**/*.*",
+          "$LOCALDATA/**/*.*",
+          "$DESKTOP/**/*.*",
+          "$DOCUMENT/**/*.*",
+          "$DOWNLOAD/**/*.*",
+          "$EXE/**/*.*",
+          "$FONT/**/*.*",
+          "$HOME/**/*.*",
+          "$PICTURE/**/*.*",
+          "$PUBLIC/**/*.*",
+          "$RUNTIME/**/*.*",
+          "$TEMPLATE/**/*.*",
+          "$VIDEO/**/*.*",
+          "$RESOURCE/**/*.*",
+          "$APP/**/*.*",
+          "$LOG/**/*.*",
+          "$TEMP/**/*.*",
+          "**/*.*",
+          "**/**/*.*"
+        ]
+      },
+      "protocol": {
+        "asset": true,
+        "assetScope": {
+          "allow": [
+            "$APPLOCALDATA/**",
+            "$APPLOCALDATA/**/*.*"
+          ]
+        }
+      }
     },
     "bundle": {
-      "active": true,
+      "active": false,
       "category": "DeveloperTool",
       "copyright": "",
       "deb": {
@@ -48,7 +117,8 @@
       }
     },
     "security": {
-      "csp": null
+      "csp": null,
+      "dangerousDisableAssetCspModification": true
     },
     "updater": {
       "active": false
