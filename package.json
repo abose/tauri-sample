@@ -1,0 +1,16 @@
+{
+  "name": "taurisimple",
+  "version": "1.0.0",
+  "description": "tauri test",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server . -p 7000 -c-1",
+    "dev": "tauri dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tauri-apps/cli": "^1.5.2",
+    "http-server": "14.1.0"
+  }
+}
